@@ -1,8 +1,15 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { QuizApp } from './quiz-app';
+import html2canvas from 'html2canvas';
+
+vi.mock('html2canvas', () => ({
+  default: vi.fn(async () => ({
+    toDataURL: () => 'data:image/png;base64,fake',
+  })),
+}));
 
 afterEach(() => {
   cleanup();
@@ -58,5 +65,26 @@ describe('QuizApp', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '提交并查看结果' }));
     expect(screen.queryByText('作者的话')).not.toBeInTheDocument();
+  });
+
+  it('shows save-result button and triggers screenshot capture on click', async () => {
+    render(React.createElement(QuizApp));
+    fireEvent.click(screen.getAllByRole('button', { name: '开始测试' })[0]);
+
+    while (screen.queryByRole('button', { name: '提交并查看结果' })?.hasAttribute('disabled')) {
+      const firstRadio = screen.getAllByRole('radio')[0];
+      fireEvent.click(firstRadio);
+    }
+
+    fireEvent.click(screen.getByRole('button', { name: '提交并查看结果' }));
+
+    const saveBtn = screen.getByRole('button', { name: '保存结果图片' });
+    expect(saveBtn).toBeInTheDocument();
+
+    fireEvent.click(saveBtn);
+
+    await waitFor(() => {
+      expect(html2canvas).toHaveBeenCalled();
+    });
   });
 });

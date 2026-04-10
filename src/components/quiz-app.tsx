@@ -1,7 +1,8 @@
  'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
+import html2canvas from 'html2canvas';
 import { RESULT_COPY, TYPE_IMAGES, specialQuestions } from '@/data/sbti-data';
 import { buildDimensionSummary, computeResult, getQuestionMetaLabel, getVisibleQuestions, shuffle } from '@/lib/sbti';
 import { questions } from '@/data/sbti-data';
@@ -33,6 +34,7 @@ function startQuestionSet(): Question[] {
 
 export function QuizApp() {
   const [state, setState] = useState<AppState>(initialState);
+  const resultCaptureRef = useRef<HTMLDivElement | null>(null);
 
   const visibleQuestions = useMemo(
     () => getVisibleQuestions(state.shuffledQuestions, state.answers, specialQuestions),
@@ -79,6 +81,26 @@ export function QuizApp() {
 
   function toHome() {
     setState(initialState);
+  }
+
+  async function saveResultImage() {
+    const target = resultCaptureRef.current;
+    if (!target || !result) return;
+
+    const canvas = await html2canvas(target, {
+      backgroundColor: '#f6faf6',
+      scale: Math.min(window.devicePixelRatio || 1, 2),
+      useCORS: true,
+      logging: false,
+    });
+
+    const dataUrl = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = `sbti-${result.finalType.code}.png`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
   const posterSrc = result ? TYPE_IMAGES[result.finalType.code] : '';
@@ -161,7 +183,7 @@ export function QuizApp() {
       <section id="result" className={`screen ${state.screen === 'result' ? 'active' : ''}`}>
         {result ? (
           <div className="result-wrap card">
-            <div className="result-layout">
+            <div className="result-layout" ref={resultCaptureRef}>
               <div className="result-top">
                 <div className={`poster-box ${posterSrc ? '' : 'no-image'}`.trim()}>
                   {posterSrc ? (
@@ -211,6 +233,9 @@ export function QuizApp() {
 
             <div className="result-actions">
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <button type="button" className="btn-secondary" onClick={saveResultImage}>
+                  保存结果图片
+                </button>
                 <button type="button" className="btn-secondary" onClick={() => startTest(false)}>
                   重新测试
                 </button>
