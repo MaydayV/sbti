@@ -1,0 +1,133 @@
+{
+  "normalTypes": [
+    {
+      "code": "CTRL",
+      "pattern": "HHH-HMH-MHH-HHH-MHM"
+    },
+    {
+      "code": "ATM-er",
+      "pattern": "HHH-HHM-HHH-HMH-MHL"
+    },
+    {
+      "code": "Dior-s",
+      "pattern": "MHM-MMH-MHM-HMH-LHL"
+    },
+    {
+      "code": "BOSS",
+      "pattern": "HHH-HMH-MMH-HHH-LHL"
+    },
+    {
+      "code": "THAN-K",
+      "pattern": "MHM-HMM-HHM-MMH-MHL"
+    },
+    {
+      "code": "OH-NO",
+      "pattern": "HHL-LMH-LHH-HHM-LHL"
+    },
+    {
+      "code": "GOGO",
+      "pattern": "HHM-HMH-MMH-HHH-MHM"
+    },
+    {
+      "code": "SEXY",
+      "pattern": "HMH-HHL-HMM-HMM-HLH"
+    },
+    {
+      "code": "LOVE-R",
+      "pattern": "MLH-LHL-HLH-MLM-MLH"
+    },
+    {
+      "code": "MUM",
+      "pattern": "MMH-MHL-HMM-LMM-HLL"
+    },
+    {
+      "code": "FAKE",
+      "pattern": "HLM-MML-MLM-MLM-HLH"
+    },
+    {
+      "code": "OJBK",
+      "pattern": "MMH-MMM-HML-LMM-MML"
+    },
+    {
+      "code": "MALO",
+      "pattern": "MLH-MHM-MLH-MLH-LMH"
+    },
+    {
+      "code": "JOKE-R",
+      "pattern": "LLH-LHL-LML-LLL-MLM"
+    },
+    {
+      "code": "WOC!",
+      "pattern": "HHL-HMH-MMH-HHM-LHH"
+    },
+    {
+      "code": "THIN-K",
+      "pattern": "HHL-HMH-MLH-MHM-LHH"
+    },
+    {
+      "code": "SHIT",
+      "pattern": "HHL-HLH-LMM-HHM-LHH"
+    },
+    {
+      "code": "ZZZZ",
+      "pattern": "MHL-MLH-LML-MML-LHM"
+    },
+    {
+      "code": "POOR",
+      "pattern": "HHL-MLH-LMH-HHH-LHL"
+    },
+    {
+      "code": "MONK",
+      "pattern": "HHL-LLH-LLM-MML-LHM"
+    },
+    {
+      "code": "IMSB",
+      "pattern": "LLM-LMM-LLL-LLL-MLM"
+    },
+    {
+      "code": "SOLO",
+      "pattern": "LML-LLH-LHL-LML-LHM"
+    },
+    {
+      "code": "FUCK",
+      "pattern": "MLL-LHL-LLM-MLL-HLH"
+    },
+    {
+      "code": "DEAD",
+      "pattern": "LLL-LLM-LML-LLL-LHM"
+    },
+    {
+      "code": "IMFW",
+      "pattern": "LLH-LHL-LML-LLL-MLL"
+    }
+  ],
+  "dimensionOrder": [
+    "S1",
+    "S2",
+    "S3",
+    "E1",
+    "E2",
+    "E3",
+    "A1",
+    "A2",
+    "A3",
+    "Ac1",
+    "Ac2",
+    "Ac3",
+    "So1",
+    "So2",
+    "So3"
+  ],
+  "resultPageCopy": {
+    "defaultModeKicker": "你的主类型",
+    "defaultSub": "维度命中度较高，当前结果可视为你的第一人格画像。",
+    "drunkModeKicker": "隐藏人格已激活",
+    "drunkBadge": "匹配度 100% · 酒精异常因子已接管",
+    "drunkSub": "乙醇亲和性过强，系统已直接跳过常规人格审判。",
+    "fallbackModeKicker": "系统强制兜底",
+    "fallbackSub": "标准人格库对你的脑回路集体罢工了，于是系统把你强制分配给了 HHHH。",
+    "matchBadgeTemplate": "匹配度 ${bestNormal.similarity}% · 精准命中 ${bestNormal.exact}/15 维",
+    "funNoteNormal": "本测试仅供娱乐，别拿它当诊断、面试、相亲、分手、招魂、算命或人生判决书。你可以笑，但别太当真。",
+    "funNoteSpecial": "本测试仅供娱乐。隐藏人格和傻乐兜底都属于作者故意埋的损招，请勿把它当成医学、心理学、相学、命理学或灵异学依据。"
+  }
+}
