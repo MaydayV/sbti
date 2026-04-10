@@ -12,6 +12,7 @@
     "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "html2canvas": "^1.4.1",
     "next": "^16.2.3",
     "react": "^19.2.5",
