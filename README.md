@@ -1,6 +1,6 @@
 # SBTI 人格测试（Next.js）
 
-这是一个一本正经胡说八道的 SBTI（傻逼人格测试）站点：
+这是一个一本正经胡说八道的 SBTI 人格测试站点：
 你认真答题，它认真给你下定义；你随便乱选，它也会非常自信地告诉你“这就是你”。
 
 > 温馨提示：本项目主要用于娱乐、整活与前端练习，不构成任何心理学、社会学或人生规划建议。
@@ -75,11 +75,6 @@ npx -y vercel@49.0.0 deploy --cwd . --prod --yes --scope maydayvs-projects
 ### 已部署地址
 
 - 正式域名：`https://sbti.caodan.io/`
-- Vercel 生产 URL：`https://sbti-38rms5hvj-maydayvs-projects.vercel.app`
-- 其他别名：
-  - `https://sbti-maydayvs-projects.vercel.app`
-  - `https://sbti-maydayv-maydayvs-projects.vercel.app`
-  - `https://sbsbti.vercel.app`
 ## License
 
 MIT

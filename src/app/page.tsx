@@ -1,13 +1,12 @@
 import { QuizApp } from '@/components/quiz-app';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sbti-iota.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sbti.caodan.io';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'SBTI 人格测试',
-  description:
-    'SBTI（傻逼人格测试）在线测试，支持自动下一题并输出认证 SBTI 人格类型与维度分析。',
+  description: 'SBTI 在线测试，支持自动下一题并输出认证 SBTI 人格类型与维度分析。',
   inLanguage: 'zh-CN',
   applicationCategory: 'EntertainmentApplication',
   operatingSystem: 'All',
