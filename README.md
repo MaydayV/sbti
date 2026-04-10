@@ -40,11 +40,11 @@ npm run optimize:images  # 无损压缩结果图片
 
 ### 方法一：推荐（从 GitHub 导入）
 
-1. 将本仓库推送到 GitHub（例如：`MaydayV/sbti`）
+1. 将代码推送到 `MaydayV/sbti`
 2. 打开 Vercel：`https://vercel.com/new`
 3. 选择 `MaydayV/sbti` 并导入
-4. Framework Preset 选择 **Next.js**（通常自动识别）
-5. 保持默认构建配置并点击 Deploy
+4. Framework Preset 保持 **Next.js**（自动识别）
+5. 点击 Deploy
 
 默认配置：
 
@@ -52,35 +52,28 @@ npm run optimize:images  # 无损压缩结果图片
 - Output Directory: `.next`
 - Install Command: `npm install`
 
-### 方法二：CLI 一键部署
+### 方法二：CLI（本项目已验证）
 
-在仓库目录执行：
-
-```bash
-npx -y vercel@49.0.0
-```
-
-首次部署按提示选择：
-
-- Scope: `maydayv`
-- Link to existing project: `No`（新建项目）
-- Project name: `sbti`
-- In which directory is your code located?: `./`
-
-生产发布：
+> 当前环境下使用 `vercel@49.0.0` 已验证可用。
 
 ```bash
-npx -y vercel@49.0.0 --prod
+# 登录状态检查
+npx -y vercel@49.0.0 whoami
+
+# 首次将本地目录绑定到项目（已验证参数）
+npx -y vercel@49.0.0 link --cwd . --yes --project sbti --scope maydayvs-projects
+
+# 生产部署
+npx -y vercel@49.0.0 deploy --cwd . --prod --yes --scope maydayvs-projects
 ```
 
-## 本次实际可用部署方式（已验证）
+### 已部署地址
 
-由于当前 Node 版本下最新 `vercel` CLI 存在依赖引擎兼容问题，建议固定使用以下命令：
-
-```bash
-npx -y vercel@49.0.0
-npx -y vercel@49.0.0 --prod
-```
+- 生产部署 URL：`https://sbti-jot1jwmg0-maydayvs-projects.vercel.app`
+- 别名：
+  - `https://sbti-iota.vercel.app`
+  - `https://sbti-maydayvs-projects.vercel.app`
+  - `https://sbti-maydayv-maydayvs-projects.vercel.app`
 
 ## License
 
