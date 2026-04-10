@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { specialQuestions } from '@/data/sbti-data';
+import { DRUNK_TRIGGER_QUESTION_ID, specialQuestions, TYPE_IMAGES } from '@/data/sbti-data';
 import { computeResult, getVisibleQuestions } from './sbti';
 
 describe('getVisibleQuestions', () => {
@@ -21,6 +21,8 @@ describe('getVisibleQuestions', () => {
     ]);
   });
 });
+
+
 
 describe('computeResult', () => {
   it('forces DRUNK when drink trigger answer is 2', () => {
@@ -43,5 +45,18 @@ describe('computeResult', () => {
     expect(result.special).toBe(false);
     expect(result.modeKicker).toBe('你的主类型');
     expect(result.badge).toContain('匹配度');
+  });
+});
+
+describe('TYPE_IMAGES', () => {
+  it('maps every type image to webp assets', () => {
+    Object.values(TYPE_IMAGES).forEach((src) => {
+      expect(src.endsWith('.webp')).toBe(true);
+      expect(src.startsWith('/images/results/')).toBe(true);
+    });
+  });
+
+  it('keeps drink trigger id stable', () => {
+    expect(DRUNK_TRIGGER_QUESTION_ID).toBe('drink_gate_q2');
   });
 });

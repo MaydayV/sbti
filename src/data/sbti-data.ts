@@ -43,9 +43,9 @@ export const TYPE_LIBRARY = dump.resultTypes;
 
 export const TYPE_IMAGES = Object.entries(dump.resultImages).reduce<Record<string, string>>(
   (acc, [code, relative]) => {
-    const fileName = relative.replace('./image/', '');
+    const fileName = relative.replace('./image/', '').replace(/\.[^.]+$/, '.webp');
     if (code === 'WOC!') {
-      acc[code] = '/images/results/WOC_.png';
+      acc[code] = '/images/results/WOC_.webp';
       return acc;
     }
     acc[code] = `/images/results/${fileName}`;

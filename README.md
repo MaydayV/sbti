@@ -36,7 +36,7 @@ npm run test       # 运行测试
 npm run typecheck  # TypeScript 检查
 npm run lint       # ESLint
 npm run build      # 生产构建
-npm run optimize:images  # 无损压缩结果图片
+npm run optimize:images  # 按目标体积压缩结果图片（默认每张约 <= 50KB）
 ```
 
 ## 部署（Vercel）
