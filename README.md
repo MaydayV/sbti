@@ -11,7 +11,7 @@
 - 测试流程：单题展示 + 选择后自动下一题，节奏干脆不拖泥带水
 - 结果页：给出“认证的 SBTI 人格类型”、描述、维度解读和结果海报图
 - 特殊题逻辑：按条件动态插入，确保离谱中仍有一点点严谨
-- 资源优化：结果图片做了无损压缩，节省带宽，整活也讲基本法
+- 资源优化：结果图片按目标体积压缩（默认每张约 <= 50KB），节省带宽，整活也讲基本法
 
 ## 技术栈
 
@@ -74,12 +74,12 @@ npx -y vercel@49.0.0 deploy --cwd . --prod --yes --scope maydayvs-projects
 
 ### 已部署地址
 
-- 生产部署 URL：`https://sbti-jot1jwmg0-maydayvs-projects.vercel.app`
-- 别名：
-  - `https://sbti-iota.vercel.app`
+- 正式域名：`https://sbti.caodan.io/`
+- Vercel 生产 URL：`https://sbti-38rms5hvj-maydayvs-projects.vercel.app`
+- 其他别名：
   - `https://sbti-maydayvs-projects.vercel.app`
   - `https://sbti-maydayv-maydayvs-projects.vercel.app`
-
+  - `https://sbsbti.vercel.app`
 ## License
 
 MIT
